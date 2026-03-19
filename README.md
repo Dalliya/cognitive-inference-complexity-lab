@@ -39,10 +39,14 @@ The model was trained and benchmarked across two distinct datasets to measure co
 * **Accuracy Achieved:** `~97.12%`
 * **Inference Analysis:** The 3D topology demonstrates an almost perfect, sharp diagonal ridge. The deep blue "valleys" represent a state of low entropy and absolute statistical sparsity off-diagonal. The network is highly confident and rarely confuses the shapes of simple digits.
 
+![MNIST Full Topology](results/mnist_full_topology.png)
+
 ### Phase 2: Complex Logic (Fashion-MNIST)
 * **Accuracy Achieved:** `~83.12%`
 * **Inference Analysis:** The topographical landscape drastically changes. While the main diagonal ridge remains prominent (indicating overall success), the surface deforms with off-diagonal "hills" of error (colored in green/yellow). 
 * **Conclusion:** These off-diagonal peaks visually map the network's cognitive confusion. For example, the model struggles with semantic overlaps—frequently confusing the pixel structures of a `Shirt` with a `T-shirt`, or a `Coat` with a `Pullover`. This proves that as geometric complexity increases, the latent decision boundaries become significantly blurred.
+
+![Fashion Full Topology](results/fashion_full_topology.png)
 
 ---
 
@@ -69,7 +73,7 @@ Visual outputs will be automatically saved to the results/ directory.
 
 ## 👩‍💻 About the Author & Acknowledgments
 
-**Developed with ❤️ by Zhdanova Dariia** 
+**Developed by Zhdanova Dariia** 
 *ML Explorer and Creator of the Matrix Rainbow visualization.*
 
 **Academic Credit:** The core mathematical engine of this project (`core/neural_network.py`) strictly preserves the original 3-layer neural network implementation from **Tariq Rashid's** brilliant book *"Make Your Own Neural Network"*. This repository builds upon his foundational code to explore advanced 3D topological analysis, modular software architecture, and complex data inference.
