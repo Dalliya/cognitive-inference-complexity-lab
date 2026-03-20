@@ -63,7 +63,7 @@ matrix_green = '#00ff41'
 bg_color = '#0d0d0d'
 floor_level = -150  
 
-# --- THE FIX: Robust Custom Data Array for Hover Tooltips ---
+# --- Robust Custom Data Array for Hover Tooltips ---
 # We create a 3D array to securely pass [Predicted Label, Actual Label, Density] to the JS engine
 custom_data = np.empty((z_smooth.shape[0], z_smooth.shape[1], 3), dtype=object)
 
@@ -134,7 +134,9 @@ fig.update_layout(
         xaxis=dict(title='Predicted Category', ticktext=fashion_labels, tickvals=list(range(10)), color=matrix_green, gridcolor='#1a4d1a', backgroundcolor=bg_color),
         yaxis=dict(title='True Category', ticktext=fashion_labels, tickvals=list(range(10)), color=matrix_green, gridcolor='#1a4d1a', backgroundcolor=bg_color),
         zaxis=dict(title='Classification Frequency', color=matrix_green, gridcolor='#1a4d1a', backgroundcolor=bg_color, range=[floor_level, np.max(z_smooth)+50]),
-        camera=dict(eye=dict(x=1.7, y=1.7, z=1.0)) 
+        
+        # --- НОВЫЙ ДРАМАТИЧНЫЙ РАКУРС ---
+        camera=dict(eye=dict(x=2.2, y=-1.5, z=1.2)) 
     ),
     annotations=[dict(
         text=legend_html, align='left',
@@ -145,7 +147,14 @@ fig.update_layout(
     margin=dict(l=0, r=0, t=80, b=0)
 )
 
-output_path = "results/fashion_interactive_topology.html"
-fig.write_html(output_path, include_plotlyjs='cdn')
-webbrowser.open('file://' + os.path.abspath(output_path))
-print(f"[SUCCESS] High-fidelity Interactive Matrix generated: {output_path}")
+# Export interactive HTML
+html_output_path = "results/fashion_interactive_topology.html"
+fig.write_html(html_output_path, include_plotlyjs='cdn')
+
+# Export static high-res PNG fallback for GitHub README
+png_output_path = "results/fashion_full_topology.png"
+fig.write_image(png_output_path, width=1200, height=800, scale=2)
+
+webbrowser.open('file://' + os.path.abspath(html_output_path))
+print(f"[SUCCESS] High-fidelity Interactive Matrix generated: {html_output_path}")
+print(f"[SUCCESS] Static PNG Preview generated: {png_output_path}")

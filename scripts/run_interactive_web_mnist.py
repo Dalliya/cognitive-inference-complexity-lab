@@ -132,7 +132,9 @@ fig.update_layout(
         xaxis=dict(title='Predicted Category', ticktext=mnist_labels, tickvals=list(range(10)), color=matrix_green, gridcolor='#1a4d1a', backgroundcolor=bg_color),
         yaxis=dict(title='True Category', ticktext=mnist_labels, tickvals=list(range(10)), color=matrix_green, gridcolor='#1a4d1a', backgroundcolor=bg_color),
         zaxis=dict(title='Classification Frequency', color=matrix_green, gridcolor='#1a4d1a', backgroundcolor=bg_color, range=[floor_level, np.max(z_smooth)+50]),
-        camera=dict(eye=dict(x=1.7, y=1.7, z=1.0)) 
+        
+        # --- DRAMATIC LOW-ANGLE PERSPECTIVE FOR PNG ---
+        camera=dict(eye=dict(x=2.2, y=-1.5, z=1.2)) 
     ),
     annotations=[dict(
         text=legend_html, align='left',
@@ -143,7 +145,14 @@ fig.update_layout(
     margin=dict(l=0, r=0, t=80, b=0)
 )
 
-output_path = "results/mnist_interactive_topology.html"
-fig.write_html(output_path, include_plotlyjs='cdn')
-webbrowser.open('file://' + os.path.abspath(output_path))
-print(f"[SUCCESS] MNIST Interactive Matrix generated: {output_path}")
+# Export interactive HTML
+html_output_path = "results/mnist_interactive_topology.html"
+fig.write_html(html_output_path, include_plotlyjs='cdn')
+
+# Export static high-res PNG fallback for GitHub README
+png_output_path = "results/mnist_full_topology.png"
+fig.write_image(png_output_path, width=1200, height=800, scale=2)
+
+webbrowser.open('file://' + os.path.abspath(html_output_path))
+print(f"[SUCCESS] MNIST Interactive Matrix generated: {html_output_path}")
+print(f"[SUCCESS] Static PNG Preview generated: {png_output_path}")
