@@ -36,20 +36,19 @@ The model was trained and benchmarked across two distinct datasets to measure co
 ## 📊 Topological Analysis & Interactive Results
 
 ### Phase 1: Simple Logic (MNIST)
-* **Accuracy Achieved:** `~97.31%`
+* **Accuracy Achieved:** 97.31%
 * **Inference Analysis:** The 3D topology demonstrates an almost perfect, sharp diagonal ridge. The deep blue "valleys" represent a state of low entropy and absolute statistical sparsity off-diagonal. The network is highly confident and rarely confuses the shapes of simple digits.
-* 🟢 **[Launch Interactive 3D MNIST Topology](https://htmlpreview.github.io/?https://github.com/Dalliya/cognitive-inference-complexity-lab/blob/main/results/mnist_interactive_topology.html)** *(Hover over the surface to track specific classification frequencies).*
+* 🟢 **[Launch Interactive 3D MNIST Topology](https://dalliya.github.io/cognitive-inference-complexity-lab/results/mnist_interactive_topology.html)** *(Hover over the surface to track specific classification frequencies).*
 
 ![MNIST Full Topology](results/mnist_full_topology.png)
 
 ### Phase 2: Complex Logic (Fashion-MNIST)
-* **Accuracy Achieved:** `~84.29%`
+* **Accuracy Achieved:** 84.29%
 * **Inference Analysis:** The topographical landscape drastically changes. While the main diagonal ridge remains prominent (indicating overall success), the surface deforms with off-diagonal "hills" of error (colored in green/yellow). 
 * **Conclusion:** These off-diagonal peaks visually map the network's cognitive confusion. For example, the model struggles with semantic overlaps—frequently confusing the pixel structures of a `Shirt` with a `T-shirt`, or a `Coat` with a `Pullover`. This proves that as geometric complexity increases, the latent decision boundaries become significantly blurred.
-* 🟣 **[Launch Interactive 3D Fashion-MNIST Topology](https://htmlpreview.github.io/?https://github.com/Dalliya/cognitive-inference-complexity-lab/blob/main/results/fashion_interactive_topology.html)** *(Rotate the matrix to explore the specific logic concentration errors).*
+* 🟣 **[Launch Interactive 3D Fashion-MNIST Topology](https://dalliya.github.io/cognitive-inference-complexity-lab/results/fashion_interactive_topology.html)** *(Rotate the matrix to explore the specific logic concentration errors).*
 
 ![Fashion Full Topology](results/fashion_full_topology.png)
-
 ---
 
 ## 🚀 Quick Start (How to run)
