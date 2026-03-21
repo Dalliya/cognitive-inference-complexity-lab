@@ -75,6 +75,6 @@ python scripts/run_interactive_web.py
 The scripts will automatically launch your default browser to display the rendered 3D topologies. Static PNG fallbacks will also be generated.
 
 👩‍💻 About the Author & Acknowledgments
-**Developed by Zhdanova Dariia (@Dalliya) ** | *ML Explorer & Creator of the Interactive 3D Matrix Rainbow.*
+**Developed by Dariia Zhdanova (@Dalliya) ** | *ML Explorer & Creator of the Interactive 3D Matrix Rainbow.*
 
 Academic Credit: The core mathematical engine of this project (core/neural_network.py) strictly preserves the original 3-layer neural network implementation from Tariq Rashid's brilliant book "Make Your Own Neural Network". This repository builds upon his foundational code to explore advanced 3D topological analysis, modular software architecture, and interactive data visualization.
