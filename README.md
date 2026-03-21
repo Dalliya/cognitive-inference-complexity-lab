@@ -38,14 +38,14 @@ The model was trained and benchmarked across two distinct datasets to measure co
 > **💡 Interactive Data:** Click on the topology images below to launch the high-fidelity 3D interactive renders in your browser!
 
 ### Phase 1: Simple Logic (MNIST)
-* **Accuracy Achieved:** 97.31%
+* **Accuracy Achieved:** 97.37%
 * **Inference Analysis:** The 3D topology demonstrates an almost perfect, sharp diagonal ridge. The deep blue "valleys" represent a state of low entropy and absolute statistical sparsity off-diagonal. The network is highly confident and rarely confuses the shapes of simple digits.
 * 🟢 **Interactive 3D View:** [Launch MNIST Topology](https://dalliya.github.io/cognitive-inference-complexity-lab/results/mnist_interactive_topology.html)
 
 [![MNIST Full Topology Preview](results/mnist_full_topology.png)](https://dalliya.github.io/cognitive-inference-complexity-lab/results/mnist_interactive_topology.html)
 
 ### Phase 2: Complex Logic (Fashion-MNIST)
-* **Accuracy Achieved:** 84.29%
+* **Accuracy Achieved:** 83,32%
 * **Inference Analysis:** The topographical landscape drastically changes. While the main diagonal ridge remains prominent (indicating overall success), the surface deforms with off-diagonal "hills" of error (colored in green/yellow). 
 * **Conclusion:** These off-diagonal peaks visually map the network's cognitive confusion. For example, the model struggles with semantic overlaps—frequently confusing the pixel structures of a `Shirt` with a `T-shirt`, or a `Coat` with a `Pullover`. This proves that as geometric complexity increases, the latent decision boundaries become significantly blurred.
 * 🟣 **Interactive 3D View:** [Launch Fashion-MNIST Topology](https://dalliya.github.io/cognitive-inference-complexity-lab/results/fashion_interactive_topology.html)
