@@ -135,7 +135,7 @@ fig.update_layout(
         yaxis=dict(title='True Category', ticktext=fashion_labels, tickvals=list(range(10)), color=matrix_green, gridcolor='#1a4d1a', backgroundcolor=bg_color),
         zaxis=dict(title='Classification Frequency', color=matrix_green, gridcolor='#1a4d1a', backgroundcolor=bg_color, range=[floor_level, np.max(z_smooth)+50]),
         
-        # --- НОВЫЙ ДРАМАТИЧНЫЙ РАКУРС ---
+        # --- NEW DRAMATICAL ANGLE ---
         camera=dict(eye=dict(x=2.2, y=-1.5, z=1.2)) 
     ),
     annotations=[dict(
